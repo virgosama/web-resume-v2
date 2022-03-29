@@ -35,11 +35,13 @@
     color: $color-black;
     margin-bottom: 6rem;
 
-    @media only screen and (max-width: $bp-small) {
-      @include set-font(2.8, 600, 1.4, .25);
+    @media only screen and (max-width: $bp-medium) {
+      @include set-font(3.6, 500, 1.4, .25);
+
     }
 
     @media only screen and (max-width: $bp-smallest) {
+      margin-bottom: 4rem;
       line-height: unset;
       text-align: center;
     }
@@ -51,9 +53,10 @@
     color: $color-black;
     margin-bottom: 6rem;
 
-    @media only screen and (max-width: $bp-small) {
-      @include set-font(2.2, 400, 1.2, .15);
+    @media only screen and (max-width: $bp-medium) {
+      @include set-font(2.4, 500, 1.2, .15);
     }
+
   }
 
   &__social {
@@ -61,16 +64,78 @@
     width: 75%;
     align-content: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: $bp-smallest) {
+      flex-direction: column;
+      width: 90%;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
   }
 
-  .social__icon {
+  .social__item {
+
+    span {
+      display: none;
+    }
+
+    @media only screen and (max-width: $bp-smallest) {
+      display: flex;
+      align-items: center;
+      //justify-content: center;
+
+        &:not(:last-child) {
+          margin-bottom: 6rem;
+        }
+
+      span {
+        @include set-font(2, 400, 2);
+        display: block;
+
+      } 
+    }
+  }
+
+  .social__link {
     @include icons;
-    cursor: pointer;
+    background-color: $color-primary;
+    position: relative;
+    transition: all .4s;
+
+    @media only screen and (max-width: $bp-smallest) {
+      margin-right: 3rem;
+    }
+
+    &:hover {
+      background-color: $color-white;
+      border: .5rem solid $color-primary;
+      position: relative;
+    }
 
     svg {
       width: 4rem;
       height: 4rem;
+      fill: $color-white;
+
     }
+
+    &:hover svg {
+      fill: $color-primary;
+      transition: all .4s;
+    }
+
+    //.social__hovered {
+    //  position: absolute;
+    //  left: 0;
+    //  transform: scale(0) translateY(0);
+    //}
+    //
+    //&:hover .social__hovered {
+    //  transition: all .5s;
+    //  transform: scale(1) translateY(500%);
+    //}
   }
 }
 
@@ -319,7 +384,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  
+
   &__container {
     display: flex;
     max-width: 1000px;
@@ -349,7 +414,7 @@
 
     span {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 3rem;
       font-style: italic;
     }
@@ -392,7 +457,7 @@
     text-align: center;
     margin-bottom: 3rem;
   }
-  
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -409,7 +474,7 @@
     width: 100%;
 
   }
-  
+
   &__icons {
     display: flex;
     justify-content: space-evenly;
@@ -419,6 +484,8 @@
 
   &__icon {
     @include icons;
+    background-color: $color-primary;
+
 
     svg {
       height: 4rem;

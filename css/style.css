@@ -125,14 +125,15 @@ body {
     text-transform: uppercase;
     color: #242323;
     margin-bottom: 6rem; }
-    @media only screen and (max-width: 37.5) {
+    @media only screen and (max-width: 43.75em) {
       .profile__name {
-        font-size: 2.8rem;
-        font-weight: 600;
+        font-size: 3.6rem;
+        font-weight: 500;
         line-height: 1.4rem;
         letter-spacing: 0.25rem; } }
     @media only screen and (max-width: 31.25em) {
       .profile__name {
+        margin-bottom: 4rem;
         line-height: unset;
         text-align: center; } }
   .profile__title {
@@ -143,10 +144,10 @@ body {
     text-transform: uppercase;
     color: #242323;
     margin-bottom: 6rem; }
-    @media only screen and (max-width: 37.5) {
+    @media only screen and (max-width: 43.75em) {
       .profile__title {
-        font-size: 2.2rem;
-        font-weight: 400;
+        font-size: 2.4rem;
+        font-weight: 500;
         line-height: 1.2rem;
         letter-spacing: 0.15rem; } }
   .profile__social {
@@ -154,8 +155,27 @@ body {
     width: 75%;
     align-content: center;
     justify-content: space-between; }
-  .profile .social__icon {
-    background-color: #005B45;
+    @media only screen and (max-width: 31.25em) {
+      .profile__social {
+        flex-direction: column;
+        width: 90%; }
+        .profile__social:not(:last-child) {
+          margin-bottom: 2rem; } }
+  .profile .social__item span {
+    display: none; }
+  @media only screen and (max-width: 31.25em) {
+    .profile .social__item {
+      display: flex;
+      align-items: center; }
+      .profile .social__item:not(:last-child) {
+        margin-bottom: 6rem; }
+      .profile .social__item span {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 2rem;
+        letter-spacing: 0rem;
+        display: block; } }
+  .profile .social__link {
     height: 8rem;
     width: 8rem;
     border: none;
@@ -164,10 +184,23 @@ body {
     align-items: center;
     justify-content: center;
     fill: #FFF;
-    cursor: pointer; }
-    .profile .social__icon svg {
+    background-color: #005B45;
+    position: relative;
+    transition: all .4s; }
+    @media only screen and (max-width: 31.25em) {
+      .profile .social__link {
+        margin-right: 3rem; } }
+    .profile .social__link:hover {
+      background-color: #F8F8F8;
+      border: 0.5rem solid #005B45;
+      position: relative; }
+    .profile .social__link svg {
       width: 4rem;
-      height: 4rem; }
+      height: 4rem;
+      fill: #F8F8F8; }
+    .profile .social__link:hover svg {
+      fill: #005B45;
+      transition: all .4s; }
 
 .career__title {
   font-size: 2rem;
@@ -400,7 +433,7 @@ body {
         padding: 0; } }
     .testimonial__item span {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
       padding-top: 3rem;
       font-style: italic; }
     .testimonial__item p {
@@ -452,7 +485,6 @@ body {
     margin-top: 4rem;
     width: 100%; }
   .portfolio__icon {
-    background-color: #005B45;
     height: 8rem;
     width: 8rem;
     border: none;
@@ -460,7 +492,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    fill: #FFF; }
+    fill: #FFF;
+    background-color: #005B45; }
     .portfolio__icon svg {
       height: 4rem;
       width: 4rem; }
