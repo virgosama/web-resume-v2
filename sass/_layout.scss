@@ -1,0 +1,95 @@
+.background-shape {
+  img {
+    width: 100%;
+    display: block;
+    margin-bottom: -.3rem;
+  }
+}
+
+.header-top-nav {
+  display: flex;
+  padding: 3rem;
+  font-size: 1.6rem;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 8rem;
+  background-color: $color-grey;
+
+  @media only screen and (max-width: $bp-large) {
+    display: none;
+  }
+
+}
+
+.hero-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  //height: 80vh;
+  margin-bottom: 8rem;
+
+}
+
+.career {
+  width: 100%;
+}
+
+.career-journey {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-primary;
+  width: 100%;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-primary;
+  width: 100%;
+}
+
+.portfolios {
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+}
+
+.profile__photo {
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin-bottom: 8rem;
+
+  img {
+    width: 28rem;
+    height: 28rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-grey;
+    height: 50%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    padding-top: 10rem;
+
+    &::before {
+      height: calc(50% + 5rem);
+    }
+  }
+  //height: auto;
+  //margin-bottom: 6rem;
+  //position: relative;
+}
