@@ -102,15 +102,28 @@ body {
   display: flex; }
 
 .top-nav__item {
-  padding: 0 3rem; }
-
-.top-nav__link, .top-nav__link:link, .top-nav__link:visited {
   font-size: 2rem;
   font-weight: 400;
   line-height: 0rem;
   letter-spacing: 0.05rem;
   color: #242323;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  box-sizing: border-box;
+  position: relative; }
+  .top-nav__item::after {
+    content: "";
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 140%;
+    border-bottom: 0.4rem solid #FFB800;
+    border-radius: 5rem;
+    transition: width 0.5s cubic-bezier(0.73, 0.03, 0.25, 0.93); }
+  .top-nav__item:hover::after {
+    content: "";
+    width: calc(100% - 6rem); }
 
 .profile {
   display: flex;
@@ -298,24 +311,19 @@ body {
   display: flex;
   justify-content: center; }
   .skill__container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     flex: 0 0 80%;
     max-width: 1000px;
     margin-bottom: 4rem; }
   .skill__item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 4rem; }
-    @media only screen and (max-width: 31.25em) {
+    @media only screen and (max-width: 37.5em) {
       .skill__item {
-        flex-direction: column; } }
+        display: block; } }
   .skill__name {
     font-size: 1.6rem;
     width: 16rem; }
-    @media only screen and (max-width: 31.25em) {
+    @media only screen and (max-width: 37.5em) {
       .skill__name {
         width: 100%;
         margin-bottom: 1rem; } }
@@ -327,6 +335,8 @@ body {
       position: absolute;
       top: 0;
       right: 1rem; }
+  .skill__progress-bar--green {
+    z-index: 1; }
   .skill__progress-bar {
     flex: 0 0 70%;
     border-radius: 30px;
@@ -368,9 +378,16 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4rem; }
+    @media only screen and (max-width: 37.5em) {
+      .other-skill__item {
+        flex-direction: column; } }
   .other-skill__name {
     font-size: 1.6rem;
     width: 16rem; }
+    @media only screen and (max-width: 37.5em) {
+      .other-skill__name {
+        width: 100%;
+        margin-bottom: 1rem; } }
   .other-skill__progress {
     width: 100%;
     position: relative; }
@@ -385,6 +402,21 @@ body {
     width: 100%;
     height: 2rem;
     background-color: #D0D0D0; }
+
+.animate-bar {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #00794E;
+  height: 100%;
+  --widthEnd: 0;
+  animation: progressing 5s ease;
+  animation-fill-mode: forwards; }
+
+@-webkit-keyframes progressing {
+  0% {
+    width: 0; }
+  100% {
+    width: var(--widthEnd); } }
 
 .testimonials__title {
   font-size: 2rem;
@@ -429,8 +461,10 @@ body {
     @media only screen and (max-width: 43.75em) {
       .testimonial__item {
         flex: 0 0 75%;
-        min-height: 100px;
-        padding: 0; } }
+        min-height: 40px;
+        padding: 0; }
+        .testimonial__item:not(:last-child) {
+          margin-bottom: 2rem; } }
     .testimonial__item span {
       display: flex;
       justify-content: flex-end;

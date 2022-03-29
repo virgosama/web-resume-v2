@@ -15,18 +15,10 @@
         <img src="img/logo.png" alt="" class="logo">
         <nav class="top-nav">
             <ul class="top-nav__list">
-                <li class="top-nav__item">
-                    <a href="#" class="top-nav__link">Career Journey</a>
-                </li>
-                <li class="top-nav__item">
-                    <a href="#" class="top-nav__link">Skills</a>
-                </li>
-                <li class="top-nav__item">
-                    <a href="#" class="top-nav__link">Testimonials</a>
-                </li>
-                <li class="top-nav__item">
-                    <a href="#" class="top-nav__link">Portfolios</a>
-                </li>
+                <li onclick="scrollToCareerJourney()" class="top-nav__item">Career Journey</li>
+                <li onclick="scrollToSkills()" class="top-nav__item">Skills</li>
+                <li onclick="scrollToTestimonials()" class="top-nav__item">Testimonials</li>
+                <li onclick="scrollToPortfolios()" class="top-nav__item">Portfolios</li>
             </ul>
         </nav>
     </header>
@@ -38,21 +30,37 @@
             <h1 class="profile__name">Maria Stevani Siregar</h1>
             <h2 class="profile__title">Front End Engineer</h2>
             <div class="profile__social">
-                <div class="social__icon">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#linkedin"></use>
-                    </svg>
+                <div class="social__item">
+                    <a href="https://www.linkedin.com/in/maria-siregar-7aa487101/" target="_blank" class="social__link">
+                        <div class="social__icon">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#linkedin"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <span>LinkedIn Profile</span>
                 </div>
-                <div class="social__icon">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#whatsapp"></use>
-                    </svg>
+                <div class="social__item">
+                    <a href="https://api.whatsapp.com/send/?phone=628988884655&text&app_absent=0" target="_blank" class="social__link">
+                        <div class="social__icon">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#whatsapp"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <span>(+62) 8988884655</span>
                 </div>
-                <div class="social__icon">
-                    <svg>
-                        <use xlink:href="img/sprite.svg#email"></use>
-                    </svg>
+                <div class="social__item">
+                    <a href="mailto:mariastevanis@gmail.com" target="_blank" class="social__link">
+                        <div class="social__icon">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#email"></use>
+                            </svg>
+                        </div>
+                    </a>
+                    <span>mariastevanis@gmail.com</span>
                 </div>
+
             </div>
         </div>
     </section>
@@ -61,7 +69,7 @@
         <img src="img/background-green-top.svg" alt="background green top">
     </div>
 
-    <section class="career-journey">
+    <section class="career-journey" id="careerJourney">
         <div class="career__title">
             <h3>career journey</h3>
         </div>
@@ -156,8 +164,8 @@
         <img src="img/background-green-bottom.svg" alt="background green bottom">
     </div>
 
-    <section class="skills">
-        <div class="skills__title">
+    <section class="skills" id="skills">
+        <div class="skills__title" id="skillsDiv">
             <h3>web development</h3>
         </div>
         <div class="skill">
@@ -166,6 +174,7 @@
                     <div class="skill__name">HTML</div>
                     <div class="skill__progress">
                         <div class="skill__progress-bar"></div>
+                        <div class="animate-bar"></div>
                         <span>90%</span>
                     </div>
                 </div>
@@ -228,7 +237,7 @@
             </div>
             </div>
             <div class="other-skills">
-                <div class="other-skills__title">
+                <div class="other-skills__title" id="otherSkillsDiv">
                     <h3 class="font-white">other skills</h3>
                 </div>
                 <div class="other-skill">
@@ -278,7 +287,7 @@
         <img src="img/background-green-top.svg" alt="background green top">
     </div>
 
-    <section class="testimonials">
+    <section class="testimonials" id="testimonials">
         <div class="testimonials__title">
             <h3>testimonials</h3>
         </div>
@@ -315,32 +324,34 @@
         <img src="img/background-green-bottom.svg" alt="background green bottom">
     </div>
 
-    <section class="portfolios">
+    <section class="portfolios" id="portfolios">
         <div class="portfolios__title">
-            <h3>testimonials</h3>
+            <h3>portfolios</h3>
         </div>
         <div class="portfolio">
             <div class="portfolio__container">
                 <div class="portfolio__item">
                     <span class="portfolio__title">Julian's Hotwheels (Front End Only)</span>
-                    <img src="./img/portfolio1.jpg" class="portfolio__photo">
-                    <div class="portfolio__icons">
-                        <a href="https://jhotwheels.netlify.app/" class="portfolio__icon" target="_blank" >
-                            <svg>
-                                <use xlink:href="img/sprite.svg#url"></use>
-                            </svg>
-                        </a>
-                        <a href="https://www.figma.com/file/2kBJKwHsTF3cnxukw7Bivd/JHotwheels-v2.0" class="portfolio__icon" target="_blank">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#figma"></use>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/virgosama/jhotwheels-v2" class="portfolio__icon" target="_blank">
-                            <svg>
-                                <use xlink:href="img/sprite.svg#github"></use>
-                            </svg>
-                        </a>
-                    </div>
+                    <a href="https://jhotwheels.netlify.app/" target="_blank" >
+                        <img src="./img/portfolio1.jpg" class="portfolio__photo">
+                    </a>
+                        <!--<div class="portfolio__icons">-->
+                        <!--<a href="https://jhotwheels.netlify.app/" class="portfolio__icon" target="_blank" >-->
+                            <!--<svg>-->
+                                <!--<use xlink:href="img/sprite.svg#url"></use>-->
+                            <!--</svg>-->
+                        <!--</a>-->
+                        <!--<a href="https://www.figma.com/file/2kBJKwHsTF3cnxukw7Bivd/JHotwheels-v2.0" class="portfolio__icon" target="_blank">-->
+                            <!--<svg>-->
+                                <!--<use xlink:href="img/sprite.svg#figma"></use>-->
+                            <!--</svg>-->
+                        <!--</a>-->
+                        <!--<a href="https://github.com/virgosama/jhotwheels-v2" class="portfolio__icon" target="_blank">-->
+                            <!--<svg>-->
+                                <!--<use xlink:href="img/sprite.svg#github"></use>-->
+                            <!--</svg>-->
+                        <!--</a>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>

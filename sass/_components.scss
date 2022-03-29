@@ -11,15 +11,32 @@
   }
 
   &__item {
-    padding: 0 3rem;
-  }
-
-  &__link,
-  &__link:link,
-  &__link:visited {
     @include set-font(2, 400, 0, .05);
     color: $color-black;
     text-decoration: none;
+    cursor: pointer;
+
+    padding: 1rem 3rem;
+    box-sizing: border-box;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 0;
+      display: block;
+      position: absolute;
+      top: 140%;
+      border-bottom: .4rem solid $color-secondary;
+      border-radius: 5rem;
+      transition: width .5s cubic-bezier(.73, .03, .25, .93);
+    }
+
+    &:hover {
+      &::after {
+        content: "";
+        width: calc(100% - 6rem);
+      }
+    }
   }
 }
 
@@ -86,15 +103,15 @@
       align-items: center;
       //justify-content: center;
 
-        &:not(:last-child) {
-          margin-bottom: 6rem;
-        }
+      &:not(:last-child) {
+        margin-bottom: 6rem;
+      }
 
       span {
         @include set-font(2, 400, 2);
         display: block;
 
-      } 
+      }
     }
   }
 
@@ -255,9 +272,9 @@
   justify-content: center;
 
   &__container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    //display: flex;
+    //justify-content: center;
+    //flex-direction: column;
     flex: 0 0 80%;
     max-width: 1000px;
     margin-bottom: 4rem;
@@ -265,12 +282,12 @@
 
   &__item {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    //justify-content: space-between;
+    //align-items: center;
     margin-bottom: 4rem;
 
-    @media only screen and (max-width: $bp-smallest) {
-      flex-direction: column;
+    @media only screen and (max-width: $bp-small) {
+      display: block;
     }
   }
 
@@ -278,7 +295,7 @@
     font-size: 1.6rem;
     width: 16rem;
 
-    @media only screen and (max-width: $bp-smallest) {
+    @media only screen and (max-width: $bp-small) {
       width: 100%;
       margin-bottom: 1rem;
     }
@@ -296,6 +313,10 @@
       right: 1rem;
     }
 
+  }
+
+  &__progress-bar--green {
+    z-index: 1;
   }
 
   &__progress-bar {
@@ -339,11 +360,20 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4rem;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+    }
   }
 
   &__name {
     font-size: 1.6rem;
     width: 16rem;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
   }
 
   &__progress {
@@ -366,6 +396,27 @@
     width: 100%;
     height: 2rem;
     background-color: $color-grey-dark;
+  }
+}
+
+
+.animate-bar {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: #00794E;
+  height: 100%;
+  --widthEnd: 0;
+  animation: progressing 5s ease;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes progressing {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: var(--widthEnd);
   }
 }
 
@@ -408,8 +459,12 @@
 
     @media only screen and (max-width: $bp-medium) {
       flex: 0 0 75%;
-      min-height: 100px;
+      min-height: 40px;
       padding: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
     }
 
     span {
@@ -463,11 +518,6 @@
     flex-direction: column;
     align-items: center;
     flex: 0 0 80%;
-
-    span {
-
-    }
-
   }
 
   &__photo {
