@@ -14,19 +14,8 @@
   }
 }
 
-.header-top-nav {
-  display: flex;
-  padding: 3rem;
-  font-size: 1.6rem;
-  align-items: center;
-  justify-content: space-between;
+.header {
 
-  padding-bottom: 8rem;
-  background-color: $color-grey;
-
-  @media only screen and (max-width: $bp-large) {
-    display: none;
-  }
 
 }
 
@@ -59,10 +48,6 @@
 }
 
 .portfolios {
-  width: 100%;
-}
-
-.footer {
   width: 100%;
 }
 

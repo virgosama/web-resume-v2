@@ -13,6 +13,16 @@
     height: 7rem;
     width: 7rem;
   }
+
+  svg {
+    height: 4rem;
+    width: 4rem;
+
+    @media only screen and (max-width: $bp-smallest) {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
 }
 
 @mixin set-font ($font-size, $font-weight, $line-height, $letter-spacing: 0) {

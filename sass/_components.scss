@@ -1,9 +1,29 @@
-.logo {
-  height: 6rem;
-  width: 6rem;
-}
+.header {
+  width: 100%;
+  background-color: $color-grey;
 
-.top-nav {
+
+  &__container {
+    display: flex;
+    padding: 3rem;
+    font-size: 1.6rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+
+    padding-bottom: 12rem;
+
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
+  }
+
+
+  &__logo {
+    height: 6rem;
+    width: 6rem;
+  }
 
   &__list {
     list-style: none;
@@ -47,7 +67,6 @@
   justify-content: center;
 
   @media only screen and (max-width: $bp-medium) {
-    //flex-basis: 80%;
     flex: 0 0 80%;
   }
 
@@ -76,7 +95,7 @@
     @include set-font(2.8, 400, 1.6, .25);
     text-transform: uppercase;
     color: $color-black;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
 
     @media only screen and (max-width: $bp-medium) {
       @include set-font(2.4, 500, 1.2, .15);
@@ -86,7 +105,7 @@
 
   &__social {
     display: flex;
-    width: 75%;
+    width: 90%;
     align-content: center;
     justify-content: space-between;
 
@@ -204,6 +223,7 @@
     @media only screen and (max-width: $bp-smallest) {
       flex: 0 0 0;
       font-weight: 600;
+      letter-spacing: .45rem;
     }
   }
 
@@ -413,6 +433,7 @@
 
     @media only screen and (max-width: $bp-medium) {
       flex: 0 0 100%;
+      padding-bottom: 2rem;
     }
   }
 
@@ -507,23 +528,12 @@
   &__icon {
     @include icons;
     background-color: $color-primary;
-
-
-    svg {
-      height: 4rem;
-      width: 4rem;
-
-      @media only screen and (max-width: $bp-smallest) {
-        height: 3rem;
-        width: 3rem;
-      }
-    }
   }
 }
 
 .footer {
   position: relative;
-
+  width: 100%;
 
   span {
     font-size: 1.4rem;
@@ -536,7 +546,7 @@
     margin: 0 3rem 3rem 0;
 
     @media only screen and (max-width: $bp-smallest) {
-      margin: 0 1rem 1.5rem 0;
+      margin: 0 1.5rem 1.5rem 0;
     }
   }
 
