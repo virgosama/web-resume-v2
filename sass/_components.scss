@@ -272,9 +272,6 @@
   justify-content: center;
 
   &__container {
-    //display: flex;
-    //justify-content: center;
-    //flex-direction: column;
     flex: 0 0 80%;
     max-width: 1000px;
     margin-bottom: 4rem;
@@ -282,8 +279,6 @@
 
   &__item {
     display: flex;
-    //justify-content: space-between;
-    //align-items: center;
     margin-bottom: 4rem;
 
     @media only screen and (max-width: $bp-small) {
@@ -302,9 +297,13 @@
   }
 
   &__progress {
-    //display: flex;
     width: 100%;
     position: relative;
+
+    flex: 1 0 70%;
+    border-radius: 30px;
+    height: 2rem;
+    background-color: $color-grey-dark;
 
     span {
       font-size: 1.6rem;
@@ -313,18 +312,6 @@
       right: 1rem;
     }
 
-  }
-
-  &__progress-bar--green {
-    z-index: 1;
-  }
-
-  &__progress-bar {
-    flex: 0 0 70%;
-    border-radius: 30px;
-    width: 100%;
-    height: 2rem;
-    background-color: $color-grey-dark;
   }
 }
 
@@ -377,9 +364,13 @@
   }
 
   &__progress {
-    //display: flex;
     width: 100%;
     position: relative;
+
+    flex: 1 0 70%;
+    border-radius: 30px;
+    height: 2rem;
+    background-color: $color-grey-dark;
 
     span {
       font-size: 1.6rem;
@@ -389,21 +380,12 @@
     }
 
   }
-
-  &__progress-bar {
-    flex: 0 0 70%;
-    border-radius: 30px;
-    width: 100%;
-    height: 2rem;
-    background-color: $color-grey-dark;
-  }
 }
-
 
 .animate-bar {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  background-color: #00794E;
+  background-color: $color-primary-light;
   height: 100%;
   --widthEnd: 0;
   animation: progressing 5s ease;
