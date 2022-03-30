@@ -1,0 +1,19 @@
+.animate-bar {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background-color: $color-primary-light;
+  height: 100%;
+  --widthEnd: 0;
+  animation: progressing 5s ease;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes progressing {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: var(--widthEnd);
+  }
+}

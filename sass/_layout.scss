@@ -1,8 +1,16 @@
-.background-shape {
+.background-shape-top {
   img {
     width: 100%;
     display: block;
     margin-bottom: -.3rem;
+  }
+}
+
+.background-shape-bottom {
+  img {
+    width: 100%;
+    display: block;
+    margin-top: -.3rem;
   }
 }
 

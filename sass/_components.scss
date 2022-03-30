@@ -46,21 +46,29 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-medium) {
+    //flex-basis: 80%;
+    flex: 0 0 80%;
+  }
+
   &__name {
     @include set-font(3.6, 600, 1.6, .65);
     text-transform: uppercase;
     color: $color-black;
     margin-bottom: 6rem;
+    text-align: center;
 
     @media only screen and (max-width: $bp-medium) {
-      @include set-font(3.6, 500, 1.4, .25);
+      @include set-font(3.6, 500, 5, .25);
+      margin-bottom: 4rem;
 
     }
 
     @media only screen and (max-width: $bp-smallest) {
-      margin-bottom: 4rem;
-      line-height: unset;
+      @include set-font(3.6, 500, 5, .25);
       text-align: center;
+      margin-bottom: 4rem;
+
     }
   }
 
@@ -96,15 +104,15 @@
 
     span {
       display: none;
+      width: 100%;
     }
 
     @media only screen and (max-width: $bp-smallest) {
       display: flex;
       align-items: center;
-      //justify-content: center;
 
       &:not(:last-child) {
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
       }
 
       span {
@@ -123,6 +131,7 @@
 
     @media only screen and (max-width: $bp-smallest) {
       margin-right: 3rem;
+      flex-shrink: 0;
     }
 
     &:hover {
@@ -136,31 +145,27 @@
       height: 4rem;
       fill: $color-white;
 
+      @media only screen and (max-width: $bp-smallest) {
+        height: 3rem;
+        width: 3rem;
+      }
     }
 
     &:hover svg {
       fill: $color-primary;
       transition: all .4s;
     }
-
-    //.social__hovered {
-    //  position: absolute;
-    //  left: 0;
-    //  transform: scale(0) translateY(0);
-    //}
-    //
-    //&:hover .social__hovered {
-    //  transition: all .5s;
-    //  transform: scale(1) translateY(500%);
-    //}
   }
 }
 
 
 .career__title {
   @include set-font(2, 500, 1, .15);
-  color: $color-white;
   margin-bottom: 4rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    margin-left: auto;
+  }
 
   h3 {
     @include h3-title-left
@@ -198,6 +203,7 @@
 
     @media only screen and (max-width: $bp-smallest) {
       flex: 0 0 0;
+      font-weight: 600;
     }
   }
 
@@ -260,10 +266,6 @@
 
   h3 {
     @include h3-title-right;
-    color: $color-white;
-    margin-bottom: 4rem;
-    min-width: 42rem;
-    display: inline-block;
   }
 }
 
@@ -382,26 +384,6 @@
   }
 }
 
-.animate-bar {
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  background-color: $color-primary-light;
-  height: 100%;
-  --widthEnd: 0;
-  animation: progressing 5s ease;
-  animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes progressing {
-  0% {
-    width: 0;
-  }
-
-  100% {
-    width: var(--widthEnd);
-  }
-}
-
 .testimonials__title {
   @include set-font(2, 500, 1, .15);
   color: $color-white;
@@ -409,6 +391,10 @@
 
   h3 {
     @include h3-title-left
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    margin-left: auto;
   }
 }
 
@@ -493,6 +479,10 @@
     font-size: 2.4rem;
     text-align: center;
     margin-bottom: 3rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2rem;
+    }
   }
 
   &__item {
@@ -522,12 +512,18 @@
     svg {
       height: 4rem;
       width: 4rem;
+
+      @media only screen and (max-width: $bp-smallest) {
+        height: 3rem;
+        width: 3rem;
+      }
     }
   }
 }
 
 .footer {
   position: relative;
+
 
   span {
     font-size: 1.4rem;

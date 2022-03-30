@@ -8,6 +8,11 @@
   align-items: center;
   justify-content: center;
   fill: #FFF;
+
+  @media only screen and (max-width: $bp-smallest) {
+    height: 7rem;
+    width: 7rem;
+  }
 }
 
 @mixin set-font ($font-size, $font-weight, $line-height, $letter-spacing: 0) {
@@ -24,6 +29,15 @@
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
   text-transform: uppercase;
+  color: $color-white;
+
+  @media only screen and (max-width: $bp-smallest) {
+    background-color: transparent;
+    border-bottom: 3px solid $color-secondary;
+    border-radius: 0;
+    padding: 3rem 4rem 3rem 0;
+    margin-bottom: 3rem;
+  }
 }
 
 @mixin h3-title-right {
@@ -33,4 +47,17 @@
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   text-transform: uppercase;
+  color: $color-white;
+  min-width: 42rem;
+  margin-bottom: 4rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    background-color: transparent;
+    border-bottom: 3px solid $color-secondary;
+    border-radius: 0;
+    padding: 3rem 4rem 3rem 0;
+    margin-bottom: 3rem;
+    color: $color-primary-light;
+    min-width: 0;
+  }
 }
